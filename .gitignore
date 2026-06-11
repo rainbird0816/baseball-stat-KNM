@@ -24,3 +24,5 @@ dist/
 
 # claude 로컬 설정(머신별)
 .claude/settings.local.json
+
+.vercel

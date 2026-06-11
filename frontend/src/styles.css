@@ -1,0 +1,140 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --panel2: #1f232c;
+  --line: #2a2f3a;
+  --fg: #e6e8ec;
+  --muted: #8b93a1;
+  --accent: #4a8cff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo",
+    "Noto Sans KR", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+.app { max-width: 1100px; margin: 0 auto; }
+
+.topbar {
+  display: flex; align-items: center; gap: 24px;
+  padding: 14px 20px; border-bottom: 1px solid var(--line);
+}
+.brand { font-size: 18px; margin: 0; }
+.topbar nav { display: flex; gap: 14px; }
+.navlink { color: var(--muted); text-decoration: none; font-size: 14px; }
+.navlink.active, .navlink:hover { color: var(--fg); }
+.navlink.disabled { opacity: 0.4; cursor: not-allowed; }
+
+.career-layout { display: grid; grid-template-columns: 280px 1fr; gap: 18px; padding: 18px 20px; }
+
+.mover-list h2 { font-size: 15px; margin: 0 0 2px; }
+.mover-list .hint { font-size: 12px; color: var(--muted); margin: 0 0 10px; }
+.mover-list ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.mover {
+  width: 100%; text-align: left; cursor: pointer;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+  padding: 10px 12px; color: var(--fg); display: flex; flex-direction: column; gap: 4px;
+}
+.mover:hover { border-color: var(--accent); }
+.mover.active { border-color: var(--accent); background: var(--panel2); }
+.mover-name { font-weight: 600; font-size: 14px; }
+.mover-native { font-size: 12px; color: var(--muted); }
+.mover-leagues { display: flex; gap: 4px; margin-top: 2px; }
+
+.career-detail { min-height: 200px; }
+.player-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+.player-head h1 { margin: 0; font-size: 24px; }
+.player-head .native { color: var(--muted); font-size: 16px; }
+.player-head .leagues { display: flex; gap: 6px; margin-left: auto; }
+
+.league-badge {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+  padding: 2px 7px; border-radius: 6px; line-height: 1.5;
+}
+
+section h3 { font-size: 14px; margin: 18px 0 8px; color: var(--muted); }
+.stat-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.stat-table th, .stat-table td { padding: 7px 8px; text-align: right; border-bottom: 1px solid var(--line); }
+.stat-table th { color: var(--muted); font-weight: 600; }
+.stat-table td:first-child, .stat-table th:first-child { text-align: left; }
+.stat-table td.team { text-align: left; color: var(--fg); }
+.stat-table td.hi { color: var(--accent); font-weight: 700; }
+.stat-table tbody tr:hover { background: var(--panel); }
+
+.muted { color: var(--muted); }
+.muted.big { font-size: 15px; padding-top: 40px; }
+.error { color: #ff6b6b; }
+
+/* 팀 히스토리 */
+.league-tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+.tab {
+  flex: 1; cursor: pointer; font-size: 13px; font-weight: 600;
+  background: var(--panel); color: var(--muted);
+  border: 1px solid var(--line); border-radius: 7px; padding: 6px 0;
+}
+.tab:hover { color: var(--fg); border-color: var(--accent); }
+.tab.active { color: var(--fg); background: var(--panel2); border-color: var(--accent); }
+
+.lineage { color: var(--muted); font-size: 13px; margin: -6px 0 8px; }
+.copyright-note { color: var(--muted); font-size: 12px; margin: 0 0 12px; }
+
+.timeline { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+.timeline li {
+  position: relative; padding: 6px 0 14px 18px; display: flex;
+  align-items: baseline; gap: 10px;
+}
+.timeline li::before {
+  content: ""; position: absolute; left: -7px; top: 10px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--bg);
+}
+.timeline .years { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 13px; min-width: 96px; }
+.timeline .era-note { font-weight: 600; font-size: 14px; }
+.timeline .src { margin-left: auto; font-size: 12px; color: var(--accent); text-decoration: none; }
+.timeline .src:hover { text-decoration: underline; }
+
+/* 포스트시즌 */
+.series-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.series {
+  display: grid; grid-template-columns: 150px 1fr 160px; align-items: center; gap: 12px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 9px; padding: 12px 14px;
+}
+.series.champ { border-color: #caa53d; background: linear-gradient(90deg, rgba(202,165,61,0.12), var(--panel)); }
+.series-round { font-size: 13px; color: var(--muted); font-weight: 600; }
+.series.champ .series-round { color: #e7c25a; }
+.series .trophy { margin-right: 6px; }
+.series-teams { display: flex; align-items: center; gap: 12px; font-size: 15px; }
+.series-teams .win { font-weight: 700; }
+.series-teams .lose { color: var(--muted); }
+.series-teams .vs { font-variant-numeric: tabular-nums; color: var(--accent); font-weight: 700; }
+.series-mvp { text-align: right; font-size: 13px; color: var(--fg); }
+
+/* 리그별 홈 */
+.league-home { padding: 18px 20px; }
+.league-tabs.big { gap: 10px; margin-bottom: 16px; }
+.league-tabs.big .tab {
+  flex: 0 0 auto; display: flex; align-items: center; gap: 8px; padding: 8px 14px;
+}
+.league-tabs.big .tab-name { font-size: 13px; }
+.league-body { display: grid; grid-template-columns: 240px 1fr; gap: 20px; }
+
+.rules-panel h3 { font-size: 14px; margin: 0 0 10px; color: var(--muted); }
+.rules-panel dl { margin: 0; }
+.rules-panel .rule {
+  display: flex; justify-content: space-between; gap: 10px;
+  padding: 8px 0; border-bottom: 1px solid var(--line);
+}
+.rules-panel dt { color: var(--muted); font-size: 13px; }
+.rules-panel dd { margin: 0; font-size: 13px; font-weight: 600; text-align: right; }
+.rules-panel dd .muted { font-weight: 400; font-size: 11px; margin-left: 4px; }
+
+.year-chips { display: flex; gap: 6px; margin-bottom: 12px; }
+.chip {
+  cursor: pointer; font-size: 13px; font-variant-numeric: tabular-nums;
+  background: var(--panel); color: var(--muted);
+  border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px;
+}
+.chip:hover { color: var(--fg); border-color: var(--accent); }
+.chip.active { color: var(--fg); background: var(--panel2); border-color: var(--accent); }

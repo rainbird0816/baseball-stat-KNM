@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "baseball-db": {
+      "command": "uvx",
+      "args": ["mcp-server-sqlite", "--db-path", "./data/baseball.db"]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+# 데이터 — 원본/중간/DB 는 커밋하지 않음
+data/raw/
+data/staging/
+data/*.db
+data/baseball.db
+data/assets/logos/*
+!data/**/.gitkeep
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# node / vite
+node_modules/
+dist/
+
+# editor
+.vscode/
+.DS_Store
+
+# claude 로컬 설정(머신별)
+.claude/settings.local.json

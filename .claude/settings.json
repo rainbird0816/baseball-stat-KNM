@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/init_db.py:*)",
+      "Bash(python -m backend.tests.test_schema)",
+      "Bash(python -m backend.ingest.sources.mlb_lahman:*)",
+      "Bash(python -m backend.ingest.daily:*)",
+      "Bash(uvicorn backend.app.main:app:*)",
+      "Bash(pytest:*)",
+      "Bash(pip install:*)",
+      "Bash(sqlite3:*)"
+    ],
+    "deny": [
+      "Read(./data/raw/**)",
+      "Read(./data/staging/**)"
+    ]
+  }
+}

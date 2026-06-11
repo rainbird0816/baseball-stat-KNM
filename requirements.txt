@@ -1,0 +1,12 @@
+# Phase 0~2 (백엔드 + MLB 적재)
+fastapi
+uvicorn[standard]
+pydantic
+pandas
+# 데이터 수집
+requests
+beautifulsoup4
+lxml
+pybaseball        # MLB Statcast 미사용. Lahman/StatsAPI 보조용
+# 테스트
+pytest

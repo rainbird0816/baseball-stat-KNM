@@ -1,0 +1,30 @@
+# Vercel 로 업로드하지 않을 것 (배포 패키지 경량화).
+# 주의: .vercelignore 가 있으면 .gitignore 는 업로드 필터로 쓰이지 않으므로
+# 빌드에 필요한 것(api/, backend/app, frontend 소스, data/baseball.db)은 제외하지 말 것.
+
+# 원본/중간 데이터 (서빙 불필요, 용량만 큼)
+data/raw/
+data/staging/
+data/assets/logos/
+
+# ingest·테스트·마이그레이션 (서빙 함수에 불필요)
+backend/ingest/
+backend/migrations/
+backend/tests/
+scripts/
+
+# 로컬 산출물
+frontend/node_modules/
+frontend/dist/
+**/__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# 문서/설정
+docs/
+.claude/
+.mcp.json
+*.md
+requirements-ingest.txt

@@ -1,12 +1,9 @@
-# Phase 0~2 (백엔드 + MLB 적재)
+# 서빙(Vercel 함수 + 로컬 API) 전용 — 경량.
+# backend/app 는 fastapi + 표준 라이브러리(sqlite3, pathlib)만 import 한다.
+# Vercel Python 런타임은 이 파일로 함수 의존성을 설치하므로 무겁게 두지 말 것.
+# (pandas/requests/bs4/lxml/pybaseball 은 ingest·테스트 전용 → requirements-ingest.txt)
+#
+# 로컬 dev 는 uvicorn 으로 실행하므로 [standard] extras 포함.
+# Vercel 함수는 자체 ASGI 서버를 쓰지만 uvicorn 설치 자체는 함수 크기에 영향이 작다.
 fastapi
 uvicorn[standard]
-pydantic
-pandas
-# 데이터 수집
-requests
-beautifulsoup4
-lxml
-pybaseball        # MLB Statcast 미사용. Lahman/StatsAPI 보조용
-# 테스트
-pytest

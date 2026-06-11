@@ -1,0 +1,13 @@
+# 데이터 수집(ingest) · 정규화 · 테스트 전용 — 무거운 의존성.
+# 로컬에서 DB 빌드/적재/테스트를 하려면 이것도 설치한다:
+#     pip install -r requirements.txt -r requirements-ingest.txt
+#
+# Vercel 서빙 함수에는 절대 설치하지 않는다(함수 크기 500MB 제한 / 빌드시간).
+pandas
+# 데이터 수집
+requests
+beautifulsoup4
+lxml
+pybaseball        # MLB Statcast 미사용. Lahman/StatsAPI 보조용
+# 테스트
+pytest

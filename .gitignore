@@ -1,10 +1,11 @@
-# 데이터 — 원본/중간/DB 는 커밋하지 않음
+# 데이터 — 원본/중간은 커밋하지 않음
 data/raw/
 data/staging/
 data/*.db
-data/baseball.db
 data/assets/logos/*
 !data/**/.gitkeep
+# 단, 배포용 읽기전용 아카이브 DB 는 예외로 커밋(Vercel 함수에 포함됨)
+!data/baseball.db
 
 # python
 __pycache__/
